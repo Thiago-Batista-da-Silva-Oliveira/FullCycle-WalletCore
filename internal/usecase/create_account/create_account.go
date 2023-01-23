@@ -14,11 +14,11 @@ type CreateAccountOutputDTO struct {
 }
 
 type CreateAccountUseCase struct {
-	AccountGateway gateway.AccountGatewat
+	AccountGateway gateway.AccountGateway
 	ClientGatewat  gateway.ClientGateway
 }
 
-func NewCreateAccountUseCase(a gateway.AccountGatewat, c gateway.ClientGateway) *CreateAccountUseCase {
+func NewCreateAccountUseCase(a gateway.AccountGateway, c gateway.ClientGateway) *CreateAccountUseCase {
 	return &CreateAccountUseCase{
 		AccountGateway: a,
 		ClientGatewat:  c,
