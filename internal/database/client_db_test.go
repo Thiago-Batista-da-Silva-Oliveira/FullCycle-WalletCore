@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"testing"
 
+	"github.com.br/thiago-batista-da-silva-oliveira/fc-ms-wallet/internal/entity"
 	"github.com/stretchr/testify/suite"
 )
 
@@ -28,4 +29,14 @@ func (s *ClientDBTestSuite) TearDownSuite() {
 
 func TestClientDBTestSuite(t *testing.T) {
 	suite.Run(t, new(ClientDBTestSuite))
+}
+
+func (s *ClientDBTestSuite) TestSave() {
+	client := &entity.Client{
+		ID:    "1",
+		Name:  "Test",
+		Email: "j@j.com",
+	}
+	err := s.clientDB.Save(client)
+	s.Nil(err)
 }
